@@ -1,7 +1,7 @@
 # app.py
 import streamlit as st
 
-# Page config
+# ── Page config ────────────────────────────────────────
 st.set_page_config(
     page_title="Neon Horizon • MUHAMMAD HASSAN",
     page_icon="⚡️",
@@ -9,28 +9,28 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ── Ultimate Cyberpunk CSS (2026 Karachi edition) ────────────────────────────────
+# ── Max Cyberpunk Karachi 2026 CSS ────────────────────────────────
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap');
 
     :root {
-        --bg: #03050a;
-        --text: #e8f5ff;
-        --neon-cyan: #00ffff;
-        --neon-magenta: #ff00ea;
-        --neon-purple: #c066ff;
-        --card: rgba(10, 15, 30, 0.78);
-        --blur: blur(22px);
-        --radius: 1.7rem;
+        --bg: #020408;
+        --text: #f0faff;
+        --neon-cyan: #00ffea;
+        --neon-magenta: #ff00d9;
+        --neon-purple: #d070ff;
+        --card: rgba(8, 12, 25, 0.82);
+        --blur: blur(24px);
+        --radius: 1.8rem;
     }
 
     [data-testid="stAppViewContainer"] {
         background: var(--bg);
         background-image: 
-            radial-gradient(circle at 6% 12%, rgba(0,255,255,0.32) 0%, transparent 42%),
-            radial-gradient(circle at 94% 82%, rgba(192,102,255,0.25) 0%, transparent 48%),
-            radial-gradient(circle at 50% 55%, rgba(255,0,234,0.15) 0%, transparent 58%);
+            radial-gradient(circle at 4% 8%, rgba(0,255,234,0.35) 0%, transparent 45%),
+            radial-gradient(circle at 96% 88%, rgba(208,112,255,0.28) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(255,0,217,0.18) 0%, transparent 60%);
         background-attachment: fixed;
         color: var(--text);
         font-family: 'Inter', system-ui, sans-serif;
@@ -40,101 +40,100 @@ st.markdown("""
 
     .hero-title {
         font-family: 'Orbitron', monospace;
-        font-size: 11rem;
+        font-size: 11.5rem;
         font-weight: 900;
-        letter-spacing: -0.09em;
+        letter-spacing: -0.1em;
         background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta), var(--neon-purple), var(--neon-cyan));
-        background-size: 600% auto;
+        background-size: 700% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: pulse-flow 8s linear infinite;
+        animation: hyper-flow 7s linear infinite;
         text-align: center;
-        margin: 0.8rem 0 0.4rem;
-        text-shadow: 0 0 140px rgba(0,255,255,0.8), 0 0 70px rgba(192,102,255,0.6);
+        margin: 0.6rem 0 0.3rem;
+        text-shadow: 0 0 160px rgba(0,255,234,0.85), 0 0 80px rgba(208,112,255,0.65);
     }
 
-    @keyframes pulse-flow {
+    @keyframes hyper-flow {
         0%   { background-position: 0% center; }
-        50%  { background-position: 300% center; }
-        100% { background-position: 600% center; }
+        100% { background-position: 700% center; }
     }
 
     .hero-subtitle {
-        font-size: 1.95rem;
-        max-width: 900px;
-        margin: 0 auto 3.5rem;
-        color: #99b3e0;
-        line-height: 1.35;
+        font-size: 2.05rem;
+        max-width: 940px;
+        margin: 0 auto 3.8rem;
+        color: #96b8e8;
+        line-height: 1.32;
         font-weight: 300;
         text-align: center;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.8px;
     }
 
     .btn-group {
         text-align: center;
-        margin: 3.5rem 0 7rem;
+        margin: 4rem 0 7.5rem;
     }
 
     .cyber-btn {
         display: inline-block;
-        padding: 1.4rem 3.8rem;
-        font-size: 1.32rem;
+        padding: 1.45rem 4rem;
+        font-size: 1.35rem;
         font-weight: 700;
         border-radius: 999px;
         text-decoration: none;
-        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition: all 0.55s cubic-bezier(0.22, 0.9, 0.36, 1.2);
         position: relative;
         overflow: hidden;
-        margin: 0 1.4rem;
+        margin: 0 1.5rem;
     }
 
     .btn-primary {
         background: linear-gradient(135deg, var(--neon-purple), var(--neon-magenta), var(--neon-cyan));
-        background-size: 300% auto;
+        background-size: 400% auto;
         color: white;
-        box-shadow: 0 20px 60px rgba(192,102,255,0.6), inset 0 0 30px rgba(255,255,255,0.18);
-        animation: glow-shift 7s linear infinite;
+        box-shadow: 0 22px 70px rgba(208,112,255,0.65), inset 0 0 35px rgba(255,255,255,0.2);
+        animation: shift-glow 6s linear infinite;
     }
 
-    @keyframes glow-shift {
+    @keyframes shift-glow {
         0%   { background-position: 0% center; }
-        100% { background-position: 300% center; }
+        100% { background-position: 400% center; }
     }
 
     .btn-primary:hover {
-        transform: translateY(-8px) scale(1.06);
-        box-shadow: 0 40px 110px rgba(192,102,255,0.9);
+        transform: translateY(-9px) scale(1.07);
+        box-shadow: 0 45px 130px rgba(208,112,255,1);
     }
 
     .btn-outline {
         background: transparent;
-        border: 3.5px solid var(--neon-cyan);
+        border: 4px solid var(--neon-cyan);
         color: var(--neon-cyan);
-        box-shadow: 0 0 40px rgba(0,255,255,0.5);
+        box-shadow: 0 0 50px rgba(0,255,234,0.6);
     }
 
     .btn-outline:hover {
-        background: rgba(0,255,255,0.18);
-        transform: translateY(-7px) scale(1.05);
-        box-shadow: 0 0 80px rgba(0,255,255,0.85);
+        background: rgba(0,255,234,0.22);
+        transform: translateY(-8px) scale(1.06);
+        box-shadow: 0 0 100px rgba(0,255,234,0.95);
     }
 
     .features {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-        gap: 3rem;
-        max-width: 1500px;
-        margin: 0 auto 9rem;
-        padding: 0 2.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+        gap: 3.2rem;
+        max-width: 1550px;
+        margin: 0 auto 10rem;
+        padding: 0 3rem;
     }
 
     .feature-card {
         background: var(--card);
         backdrop-filter: var(--blur);
-        border: 2px solid rgba(0,255,255,0.35);
+        border: 2.2px solid rgba(0,255,234,0.38);
         border-radius: var(--radius);
-        padding: 3.2rem 2.8rem;
-        transition: all 0.6s ease;
+        padding: 3.4rem 3rem;
+        transition: all 0.65s ease;
         position: relative;
         overflow: hidden;
     }
@@ -142,60 +141,60 @@ st.markdown("""
     .feature-card::before {
         content: '';
         position: absolute;
-        inset: -60%;
-        background: conic-gradient(from 0deg, transparent, rgba(0,255,255,0.15), transparent 50%);
+        inset: -70%;
+        background: conic-gradient(from 0deg, transparent, rgba(0,255,234,0.18), transparent 40%);
         opacity: 0;
-        transition: opacity 1s;
-        animation: spin 25s linear infinite;
+        transition: opacity 1.2s;
+        animation: eternal-spin 30s linear infinite;
     }
 
-    @keyframes spin {
+    @keyframes eternal-spin {
         100% { transform: rotate(360deg); }
     }
 
     .feature-card:hover::before {
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
     .feature-card:hover {
-        transform: translateY(-22px) scale(1.05);
+        transform: translateY(-24px) scale(1.06);
         border-color: var(--neon-cyan);
-        box-shadow: 0 50px 120px rgba(0,0,0,0.7), 0 0 100px rgba(0,255,255,0.55);
+        box-shadow: 0 55px 140px rgba(0,0,0,0.75), 0 0 120px rgba(0,255,234,0.65);
     }
 
     .feature-card h3 {
-        font-size: 2.3rem;
-        margin-bottom: 1.4rem;
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
         color: var(--neon-cyan);
-        text-shadow: 0 0 30px rgba(0,255,255,0.7);
+        text-shadow: 0 0 35px rgba(0,255,234,0.8);
     }
 
     .feature-card p {
-        color: #d6e6ff;
-        line-height: 1.75;
-        font-size: 1.12rem;
+        color: #dbefff;
+        line-height: 1.8;
+        font-size: 1.15rem;
     }
 
     .footer {
         text-align: center;
-        padding: 8rem 1rem 9rem;
-        color: #6b829e;
-        font-size: 1.1rem;
-        border-top: 1px solid rgba(192,102,255,0.2);
+        padding: 9rem 1rem 10rem;
+        color: #6a88b5;
+        font-size: 1.15rem;
+        border-top: 1px solid rgba(208,112,255,0.22);
     }
 
-    @media (max-width: 1200px) {
-        .hero-title { font-size: 9rem; }
-        .hero-subtitle { font-size: 1.65rem; padding: 0 3rem; }
+    @media (max-width: 1300px) {
+        .hero-title { font-size: 9.5rem; }
+        .hero-subtitle { font-size: 1.75rem; padding: 0 3.5rem; }
     }
 
-    @media (max-width: 768px) {
-        .hero-title { font-size: 7rem; }
-        .cyber-btn { padding: 1.2rem 3rem; font-size: 1.2rem; margin: 1rem 0.8rem; }
+    @media (max-width: 800px) {
+        .hero-title { font-size: 7.5rem; }
+        .cyber-btn { padding: 1.3rem 3.2rem; font-size: 1.25rem; margin: 1.2rem 1rem; }
     }
 
-    @media (max-width: 480px) {
-        .hero-title { font-size: 5.5rem; }
+    @media (max-width: 500px) {
+        .hero-title { font-size: 6rem; }
     }
 </style>
 """, unsafe_allow_html=True)
@@ -206,8 +205,8 @@ st.markdown('<h1 class="hero-title">NEON HORIZON</h1>', unsafe_allow_html=True)
 st.markdown(
     """
     <div class="hero-subtitle">
-        MUHAMMAD HASSAN's cyber gateway from Karachi.<br>
-        Where Sindh streets meet infinite digital neon — code runs faster here.
+        MUHAMMAD HASSAN's digital frontier — Karachi born, cyber unstoppable.<br>
+        From the streets of Sindh to the edge of tomorrow — code glows brighter here.
     </div>
     """,
     unsafe_allow_html=True
@@ -216,8 +215,8 @@ st.markdown(
 # Buttons
 st.markdown("""
 <div class="btn-group">
-    <a href="#features" class="cyber-btn btn-primary">Enter My Grid</a>
-    <a href="#" class="cyber-btn btn-outline">Scan the Signal</a>
+    <a href="#features" class="cyber-btn btn-primary">Enter the Horizon</a>
+    <a href="#" class="cyber-btn btn-outline">Trace the Neon</a>
 </div>
 """, unsafe_allow_html=True)
 
@@ -229,31 +228,31 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
     <div class="feature-card">
-        <h3>⚡️ Hyper Karachi Pulse</h3>
-        <p>Sub-50ms response, electric flow optimized for 5G/Starlink — born in the heat of Sindh, built to dominate globally.</p>
+        <h3>⚡️ Karachi Hypercore</h3>
+        <p>Lightning execution — under 40ms loads, fluid motion, wired for Pakistan's fastest networks and beyond.</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
     <div class="feature-card">
-        <h3>🌌 Neon Sindh Matrix</h3>
-        <p>Glass holograms + cyber outlines + Karachi night glow — UI that feels like hacking the future from Saddar to the stars.</p>
+        <h3>🌌 Sindh Neon Grid</h3>
+        <p>Holographic glass, electric outlines, midnight Karachi rain glow — interfaces that pulse like the city at 3 AM.</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col3:
     st.markdown("""
     <div class="feature-card">
-        <h3>🛡️ Eternal Scale Core</h3>
-        <p>From solo dev project to planetary infrastructure — engineered to scale without limits, just like Karachi never sleeps.</p>
+        <h3>🛡️ Infinite Karachi Engine</h3>
+        <p>Scales from one dev to global empire — built tough like the spirit of Karachi, no limits, no downtime.</p>
     </div>
     """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# Footer – personalized
+# Personalized Footer
 st.markdown(
-    '<div class="footer">© 2026 Neon Horizon • Created by MUHAMMAD HASSAN in Karachi, Sindh, Pakistan • Fueled by chai, code & cyber dreams ⚡️</div>',
+    '<div class="footer">© 2026 Neon Horizon • Crafted by MUHAMMAD HASSAN • Karachi, Sindh, Pakistan • Neon dreams + endless code ⚡️</div>',
     unsafe_allow_html=True
 )
